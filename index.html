@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme</title>
+
+    <style>
+      :root {
+        --dark: #0f111a;
+        --light: #cecece;
+      }
+
+      .light-theme {
+        --text-color: var(--dark);
+        --background-color: var(--light);
+        --font-style: normal;
+      }
+
+      .dark-theme {
+        --text-color: var(--light);
+        --background-color: var(--dark);
+        --font-style: italic;
+      }
+
+      * {
+        font-family: sans-serif;
+        color: var(--text-color);
+        margin: 0;
+        transition: all 0.2s;
+        font-style: var(--font-style);
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background-color: var(--background-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-size: 60px;
+      }
+    </style>
+  </head>
+
+  <body class="light-theme">
+    <h1>HELLO WORLD</h1>
+
+    <script>
+      const body = document.querySelector('body');
+
+      body.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        body.classList.toggle('dark-theme');
+      });
+    </script>
+  </body>
+</html>
